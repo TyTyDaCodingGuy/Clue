@@ -1,24 +1,24 @@
-// An example of a card object
-var card = {
-    color: "red",
-    name: "Card 1"
-};
+window.onload = function() {
+    // Get all tables
+    var tables = document.getElementsByTagName("table");
 
-// An array to hold all cards
-var cards = [card];
-
-// Function to add a card to the board
-function addCardToBoard(card) {
-    var board = document.getElementById('board');
-
-    var cardElement = document.createElement('div');
-    cardElement.className = 'card ' + card.color;
-    cardElement.innerText = card.name;
-
-    board.appendChild(cardElement);
+    for (var i = 0; i < tables.length; i++) {
+        // Add click event to each cell
+        for (var j = 0; j < tables[i].rows.length; j++) {
+            for (var k = 0; k < tables[i].rows[j].cells.length; k++) {
+                tables[i].rows[j].cells[k].onclick = function () {
+                    markCell(this);
+                };
+            }
+        }
+    }
 }
 
-// Add all cards to the board
-for (var i = 0; i < cards.length; i++) {
-    addCardToBoard(cards[i]);
+function markCell(cell) {
+    // Toggle cell color
+    if (cell.style.backgroundColor == "") {
+        cell.style.backgroundColor = "#90EE90";  // LightGreen
+    } else {
+        cell.style.backgroundColor = "";
+    }
 }
