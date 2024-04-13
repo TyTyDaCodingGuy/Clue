@@ -6,17 +6,21 @@ window.onload = function() {
         // Add click event to each cell
         for (var j = 0; j < tables[i].rows.length; j++) {
             tables[i].rows[j].cells[0].onclick = function () {
-                markCell(this);
+                changeCellColor(this);
             };
         }
     }
 }
 
-function markCell(cell) {
-    // Toggle cell color
-    if (cell.style.backgroundColor == "") {
-        cell.style.backgroundColor = "#90EE90";  // LightGreen
+function changeCellColor(cell) {
+    // Cycle through colors
+    var colors = ["", "color1", "color2", "color3", "color4", "color5", "color6", "color7"];
+    var currentColor = cell.className;
+    var index = colors.indexOf(currentColor);
+
+    if (index == -1 || index == colors.length - 1) {
+        cell.className = colors[1];
     } else {
-        cell.style.backgroundColor = "";
+        cell.className = colors[index + 1];
     }
 }
