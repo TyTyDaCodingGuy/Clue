@@ -5,11 +5,9 @@ window.onload = function() {
     for (var i = 0; i < tables.length; i++) {
         // Add click event to each cell
         for (var j = 0; j < tables[i].rows.length; j++) {
-            for (var k = 0; k < tables[i].rows[j].cells.length; k++) {
-                tables[i].rows[j].cells[k].onclick = function () {
-                    markCell(this);
-                };
-            }
+            tables[i].rows[j].cells[0].onclick = function () {
+                markCell(this);
+            };
         }
     }
 }
