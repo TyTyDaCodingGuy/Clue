@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Online Clue Board</title>
+    <title>Clue Detective Sheet</title>
     <style>
-        .card {
-            width: 100px;
-            height: 100px;
+        table, th, td {
             border: 1px solid black;
-            margin: 10px;
-        }
-        .red {
-            background-color: red;
-        }
-        .blue {
-            background-color: blue;
-        }
-        .green {
-            background-color: green;
+            border-collapse: collapse;
+            padding: 5px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <div id="board">
-        <!-- Cards will be added here -->
-    </div>
+    <h2>Clue Detective Sheet</h2>
 
-    <div id="notes">
-        <textarea rows="4" cols="50">
-        </textarea>
-    </div>
+    <h3>Characters</h3>
+    <table id="characters">
+        <tr>
+            <th>Miss Scarlet</th>
+            <th>Professor Plum</th>
+            <th>Mrs. Peacock</th>
+            <th>Mr. Green</th>
+            <th>Colonel Mustard</th>
+            <th>Mrs. White</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
 
-    <script src="clue.js"></script>
+    <h3>Weapons</h3>
+    <table id="weapons">
+        <!-- Similar structure as above -->
+    </table>
+
+    <h3>Rooms</h3>
+    <table id="rooms">
+        <!-- Similar structure as above -->
+    </table>
+
+    <h3>Notes</h3>
+    <textarea id="notes" rows="10" cols="50"></textarea>
 </body>
 </html>
